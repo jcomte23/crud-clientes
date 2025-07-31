@@ -1,14 +1,30 @@
+import { createElement } from "react"
+import { traerAtodosLosClientes } from "../services/clientesService"
+
 let formulario = document.getElementById("cliente-form")
 let espacioDondeSeMuestraLosClientes = document.querySelector(".tbody-clientes")
 
-document.addEventListener("DOMContentLoaded", function () {
-    // aca va ir a la base de datos y me a traer a todos los clientes y luego los va a pintar
+document.addEventListener("DOMContentLoaded", async function () {
+    pintarLosClientesEnElHTML()
 })
 
 
+async function pintarLosClientesEnElHTML() {
+    let clientes = await traerAtodosLosClientes()
+    espacioDondeSeMuestraLosClientes.innerHTML = ""
 
-
-
-formulario.addEventListener("click", function () {
-    alert("le diste click al formulario")
-})
+    for (const cliente of clientes) {
+        espacioDondeSeMuestraLosClientes.innerHTML += `
+        <tr>
+          <td>${cliente.nombre} ${cliente.apellido}</td>
+          <td>${cliente.correo}</td>
+          <td>${cliente.ciudad}</td>
+          <td>${cliente.edad}</td>
+          <td class="actions">
+            <button class="edit" >Editar</button>
+            <button class="delete" >Eliminar</button>
+          </td>
+        </tr>
+        `
+    }
+}

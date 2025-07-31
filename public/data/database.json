@@ -15,6 +15,14 @@
             "correo":"lupe@gmail.com",
             "ciudad":"barranquilla",
             "edad":22
+        },
+        {
+            "id":"003",
+            "nombre":"mario",
+            "apellido":"bros",
+            "correo":"mario@gmail.com",
+            "ciudad":"pereira",
+            "edad":29
         }
     ]
 }
