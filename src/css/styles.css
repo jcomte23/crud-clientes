@@ -24,6 +24,7 @@ h1, h2 {
 form {
   display: flex;
   flex-wrap: wrap;
+  border: 10px solid red;
   gap: 1rem;
   margin-bottom: 2rem;
 }
@@ -56,6 +57,10 @@ table {
 
 thead {
   background-color: #e2e8f0;
+}
+
+.tbody-clientes{
+  border: 10px solid blue;
 }
 
 th, td {

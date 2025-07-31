@@ -1,3 +1,20 @@
 {
-    "clientes":[]
+    "clientes":[
+        {
+            "id":"001",
+            "nombre":"pepito",
+            "apellido":"perez",
+            "correo":"pepito@gmail.com",
+            "ciudad":"medellin",
+            "edad":27
+        },
+        {
+            "id":"002",
+            "nombre":"lupe",
+            "apellido":"ortiz",
+            "correo":"lupe@gmail.com",
+            "ciudad":"barranquilla",
+            "edad":22
+        }
+    ]
 }
