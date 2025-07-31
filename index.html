@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/css/styles.css">
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Gestión de Clientes</h1>
+    <form id="cliente-form">
+      <input type="text" id="nombre" placeholder="Nombre" required />
+      <input type="text" id="apellido" placeholder="Apellido" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="ciudad" placeholder="Ciudad" />
+      <input type="text" id="pais" placeholder="País" />
+      <input type="number" id="edad" placeholder="Edad" />
+      <button type="submit">Agregar Cliente</button>
+    </form>
+
+    <h2>Lista de Clientes</h2>
+    <table id="clientes-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Ciudad</th>
+          <th>Edad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>aca va el nombre del clientes</td>
+          <td>aca va el correo</td>
+          <td>aca la ciudad</td>
+          <td>aca va la edad</td>
+          <td class="actions">
+            <button class="edit" >Editar</button>
+            <button class="delete" >Eliminar</button>
+          </td>
+        </tr>
+        <!-- Clientes se cargarán aquí -->
+      </tbody>
+    </table>
+  </div>
+  <!-- <script type="module" src="./app/js/main.js"></script> -->
+</body>
+
+</html>
