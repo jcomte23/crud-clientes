@@ -5,3 +5,21 @@ export async function traerAtodosLosClientes() {
 
     return clientes
 }
+
+
+export async function crearUnNuevoClienteEnLaBaseDeDatos(clienteNuevo) {
+
+    let promesa = await fetch("http://localhost:3000/clientes",{
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body: JSON.stringify(clienteNuevo) 
+    })
+    
+    if (promesa.ok && promesa.status === 201) {
+        return true
+    } else {
+        return false
+    }
+}

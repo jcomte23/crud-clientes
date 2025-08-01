@@ -1,28 +1,46 @@
 {
-    "clientes":[
-        {
-            "id":"001",
-            "nombre":"pepito",
-            "apellido":"perez",
-            "correo":"pepito@gmail.com",
-            "ciudad":"medellin",
-            "edad":27
-        },
-        {
-            "id":"002",
-            "nombre":"lupe",
-            "apellido":"ortiz",
-            "correo":"lupe@gmail.com",
-            "ciudad":"barranquilla",
-            "edad":22
-        },
-        {
-            "id":"003",
-            "nombre":"mario",
-            "apellido":"bros",
-            "correo":"mario@gmail.com",
-            "ciudad":"pereira",
-            "edad":29
-        }
-    ]
+  "clientes": [
+    {
+      "id": "001",
+      "nombre": "pepito",
+      "apellido": "perez",
+      "correo": "pepito@gmail.com",
+      "ciudad": "medellin",
+      "edad": 27
+    },
+    {
+      "id": "002",
+      "nombre": "lupe",
+      "apellido": "ortiz",
+      "correo": "lupe@gmail.com",
+      "ciudad": "barranquilla",
+      "edad": 22
+    },
+    {
+      "id": "003",
+      "nombre": "mario",
+      "apellido": "bros",
+      "correo": "mario@gmail.com",
+      "ciudad": "pereira",
+      "edad": 29
+    },
+    {
+      "id": "f587",
+      "nombre": "Javier",
+      "apellido": "Combita",
+      "correo": "javier@gmail.com",
+      "ciudad": "Barranquilla",
+      "pais": "",
+      "edad": null
+    },
+    {
+      "id": "0699",
+      "nombre": "Martin",
+      "apellido": "poveda",
+      "correo": "martin@gmail.com",
+      "ciudad": "medellin",
+      "pais": "Colombia",
+      "edad": 64
+    }
+  ]
 }
