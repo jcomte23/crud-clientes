@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
 formulario.addEventListener("submit", async function (evento) {
+    evento.preventDefault()
+
 
     let clienteNuevo =
     {
@@ -25,11 +27,42 @@ formulario.addEventListener("submit", async function (evento) {
     if (resultado === true) {
         console.log("el cliente se agrego");
         pintarLosClientesEnElHTML()
-    }else{
+    } else {
         alert("error; por favor reintente mas tarde")
     }
-    evento.preventDefault()
+
+
 })
+
+
+espacioDondeSeMuestraLosClientes.addEventListener("click", function (evento) {
+
+    if (evento.target.classList.contains("edit")) {
+        console.log("le diste click a un boton de editar")
+        let id = evento.target.getAttribute("data-id")
+        
+        // aca llamamos a la funcion que se encarga de editar
+        // al cliente en la base de datos
+
+
+    }
+
+    if (evento.target.classList.contains("delete")) {
+        console.log("le diste click a un boton de eliminar")
+        let id = evento.target.getAttribute("data-id")
+        
+        // aca llamamos a la funcion que se encarga de eliminar
+        // al cliente en la base de datos
+
+
+    }
+})
+
+
+
+
+
+
 
 
 
@@ -56,8 +89,8 @@ async function pintarLosClientesEnElHTML() {
           <td>${cliente.ciudad}</td>
           <td>${cliente.edad}</td>
           <td class="actions">
-            <button class="edit" >Editar</button>
-            <button class="delete" >Eliminar</button>
+            <button class="edit" data-id=${cliente.id} >Editar</button>
+            <button class="delete"  data-id=${cliente.id}  >Eliminar</button>
           </td>
         </tr>
         `
