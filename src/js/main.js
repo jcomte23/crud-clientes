@@ -1,7 +1,8 @@
 import {
     crearUnNuevoClienteEnLaBaseDeDatos,
     eliminarUnClienteEnLaBaseDeDatos,
-    traerAtodosLosClientes
+    traerAtodosLosClientes,
+    traerAunClienteEnParticular
 } from "../services/clientesService"
 
 let formulario = document.getElementById("cliente-form")
@@ -42,13 +43,21 @@ formulario.addEventListener("submit", async function (evento) {
 espacioDondeSeMuestraLosClientes.addEventListener("click", async function (evento) {
 
     if (evento.target.classList.contains("edit")) {
-        console.log("le diste click a un boton de editar")
         let id = evento.target.getAttribute("data-id")
 
-        // aca llamamos a la funcion que se encarga de editar
-        // al cliente en la base de datos
+        let cliente = await traerAunClienteEnParticular(id)
+
+        formulario.nombre.value = cliente.nombre
+        formulario.apellido.value = cliente.apellido
+        formulario.email.value = cliente.correo
+        formulario.ciudad.value = cliente.ciudad
+        formulario.pais.value = cliente.pais
+        formulario.edad.value = cliente.edad
 
 
+        formulario.btnsave.style.backgroundColor = "green";
+        formulario.btnsave.textContent = "Actualizar usuario";
+    
     }
 
     if (evento.target.classList.contains("delete")) {

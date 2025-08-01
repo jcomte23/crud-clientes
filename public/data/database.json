@@ -1,7 +1,7 @@
 {
   "clientes": [
     {
-      "id": "2b8f",
+      "id": "bb03",
       "nombre": "Javier",
       "apellido": "Combita",
       "correo": "javier@gmail.com",
@@ -10,13 +10,22 @@
       "edad": 12
     },
     {
-      "id": "bb03",
-      "nombre": "Javier",
-      "apellido": "Combita",
-      "correo": "javier@gmail.com",
-      "ciudad": "Barranquilla",
+      "id": "aa33",
+      "nombre": "Martin",
+      "apellido": "poveda",
+      "correo": "martin@gmail.com",
+      "ciudad": "medellin",
       "pais": "Colombia",
-      "edad": 12
+      "edad": 45
+    },
+    {
+      "id": "fbee",
+      "nombre": "daniela",
+      "apellido": "martinez",
+      "correo": "daniela@gmail.com",
+      "ciudad": "Pereira",
+      "pais": "Colombia",
+      "edad": 19
     }
   ]
 }

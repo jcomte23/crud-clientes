@@ -6,6 +6,14 @@ export async function traerAtodosLosClientes() {
     return clientes
 }
 
+export async function traerAunClienteEnParticular(id) {
+    let promesa = await fetch(`http://localhost:3000/clientes/${id}`)
+    let cliente = await promesa.json()
+
+    return cliente
+}
+
+
 
 export async function crearUnNuevoClienteEnLaBaseDeDatos(clienteNuevo) {
 
