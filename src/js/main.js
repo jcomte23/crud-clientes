@@ -1,4 +1,8 @@
-import { crearUnNuevoClienteEnLaBaseDeDatos, traerAtodosLosClientes } from "../services/clientesService"
+import {
+    crearUnNuevoClienteEnLaBaseDeDatos,
+    eliminarUnClienteEnLaBaseDeDatos,
+    traerAtodosLosClientes
+} from "../services/clientesService"
 
 let formulario = document.getElementById("cliente-form")
 let espacioDondeSeMuestraLosClientes = document.querySelector(".tbody-clientes")
@@ -35,12 +39,12 @@ formulario.addEventListener("submit", async function (evento) {
 })
 
 
-espacioDondeSeMuestraLosClientes.addEventListener("click", function (evento) {
+espacioDondeSeMuestraLosClientes.addEventListener("click", async function (evento) {
 
     if (evento.target.classList.contains("edit")) {
         console.log("le diste click a un boton de editar")
         let id = evento.target.getAttribute("data-id")
-        
+
         // aca llamamos a la funcion que se encarga de editar
         // al cliente en la base de datos
 
@@ -48,34 +52,17 @@ espacioDondeSeMuestraLosClientes.addEventListener("click", function (evento) {
     }
 
     if (evento.target.classList.contains("delete")) {
-        console.log("le diste click a un boton de eliminar")
+
         let id = evento.target.getAttribute("data-id")
-        
-        // aca llamamos a la funcion que se encarga de eliminar
-        // al cliente en la base de datos
 
+        let confirmacion = confirm("estas seguro que quiere eliminar a ese cliente")
 
+        if (confirmacion === true) {
+            await eliminarUnClienteEnLaBaseDeDatos(id)
+        }
+        pintarLosClientesEnElHTML()
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 async function pintarLosClientesEnElHTML() {
     let clientes = await traerAtodosLosClientes()

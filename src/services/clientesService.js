@@ -9,15 +9,29 @@ export async function traerAtodosLosClientes() {
 
 export async function crearUnNuevoClienteEnLaBaseDeDatos(clienteNuevo) {
 
-    let promesa = await fetch("http://localhost:3000/clientes",{
-        method:"POST",
-        headers:{
-            "content-type":"application/json"
+    let promesa = await fetch("http://localhost:3000/clientes", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
         },
-        body: JSON.stringify(clienteNuevo) 
+        body: JSON.stringify(clienteNuevo)
     })
-    
+
     if (promesa.ok && promesa.status === 201) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+
+export async function eliminarUnClienteEnLaBaseDeDatos(id) {
+    let promesa = await fetch(`http://localhost:3000/clientes/${id}`, {
+        method: "DELETE"
+    })
+
+    if (promesa.ok) {
         return true
     } else {
         return false
