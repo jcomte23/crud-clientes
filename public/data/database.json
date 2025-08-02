@@ -33,17 +33,8 @@
       "correo": "jcomte23@gmail.com",
       "ciudad": "Barranquilla",
       "pais": "Colombia",
-      "edad": 29,
+      "edad": 30,
       "id": "4bfa"
-    },
-    {
-      "id": "21a3",
-      "nombre": "daniela",
-      "apellido": "poveda",
-      "correo": "daniela@gmail.com",
-      "ciudad": "medellin",
-      "pais": "Colombia",
-      "edad": 96
     }
   ]
 }

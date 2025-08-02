@@ -5,6 +5,7 @@ import {
     traerAtodosLosClientes,
     traerAunClienteEnParticular
 } from "../services/clientesService"
+import { alertaExitosa, alertErronea } from "../utils/alerts"
 
 let formulario = document.getElementById("cliente-form")
 let espacioDondeSeMuestraLosClientes = document.querySelector(".tbody-clientes")
@@ -33,11 +34,11 @@ formulario.addEventListener("submit", async function (evento) {
         let resultado = await crearUnNuevoClienteEnLaBaseDeDatos(clienteNuevo)
 
         if (resultado === true) {
-            console.log("el cliente se agrego");
+            alertaExitosa("cliente agregado")
             pintarLosClientesEnElHTML()
             formulario.reset()
         } else {
-            alert("error; por favor reintente mas tarde")
+            alertErronea("error; por favor reintente mas tarde")
         }
     } else {
         let resultado = await actualizarAunUsuarioEnLaBaseDeDatos(cajaTemporal, clienteNuevo)
@@ -47,26 +48,12 @@ formulario.addEventListener("submit", async function (evento) {
             formulario.btnsave.textContent = "Agregar cliente";
             cajaTemporal=null
             pintarLosClientesEnElHTML()
+            alertaExitosa("cliente actualizado")
             formulario.reset()
         } else {
-            alert("error; por favor reintente mas tarde")
+            alertErronea("error; por favor reintente mas tarde")
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })
 
@@ -100,6 +87,7 @@ espacioDondeSeMuestraLosClientes.addEventListener("click", async function (event
 
         if (confirmacion === true) {
             await eliminarUnClienteEnLaBaseDeDatos(id)
+            alertaExitosa("cliente eliminado")
         }
         pintarLosClientesEnElHTML()
     }
