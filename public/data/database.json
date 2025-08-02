@@ -19,13 +19,31 @@
       "edad": 45
     },
     {
-      "id": "fbee",
       "nombre": "daniela",
       "apellido": "martinez",
       "correo": "daniela@gmail.com",
-      "ciudad": "Pereira",
+      "ciudad": "medellin",
       "pais": "Colombia",
-      "edad": 19
+      "edad": 19,
+      "id": "fbee"
+    },
+    {
+      "nombre": "Javier",
+      "apellido": "Combita",
+      "correo": "jcomte23@gmail.com",
+      "ciudad": "Barranquilla",
+      "pais": "Colombia",
+      "edad": 29,
+      "id": "4bfa"
+    },
+    {
+      "id": "21a3",
+      "nombre": "daniela",
+      "apellido": "poveda",
+      "correo": "daniela@gmail.com",
+      "ciudad": "medellin",
+      "pais": "Colombia",
+      "edad": 96
     }
   ]
 }

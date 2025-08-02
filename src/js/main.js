@@ -1,4 +1,5 @@
 import {
+    actualizarAunUsuarioEnLaBaseDeDatos,
     crearUnNuevoClienteEnLaBaseDeDatos,
     eliminarUnClienteEnLaBaseDeDatos,
     traerAtodosLosClientes,
@@ -7,6 +8,7 @@ import {
 
 let formulario = document.getElementById("cliente-form")
 let espacioDondeSeMuestraLosClientes = document.querySelector(".tbody-clientes")
+let cajaTemporal = null
 
 document.addEventListener("DOMContentLoaded", async function () {
     pintarLosClientesEnElHTML()
@@ -27,14 +29,43 @@ formulario.addEventListener("submit", async function (evento) {
         edad: parseFloat(formulario.edad.value)
     }
 
-    let resultado = await crearUnNuevoClienteEnLaBaseDeDatos(clienteNuevo)
+    if (cajaTemporal === null) {
+        let resultado = await crearUnNuevoClienteEnLaBaseDeDatos(clienteNuevo)
 
-    if (resultado === true) {
-        console.log("el cliente se agrego");
-        pintarLosClientesEnElHTML()
+        if (resultado === true) {
+            console.log("el cliente se agrego");
+            pintarLosClientesEnElHTML()
+            formulario.reset()
+        } else {
+            alert("error; por favor reintente mas tarde")
+        }
     } else {
-        alert("error; por favor reintente mas tarde")
+        let resultado = await actualizarAunUsuarioEnLaBaseDeDatos(cajaTemporal, clienteNuevo)
+        if (resultado === true) {
+            console.log("el cliente se actualizo");
+            formulario.btnsave.style.backgroundColor = "blue";
+            formulario.btnsave.textContent = "Agregar cliente";
+            cajaTemporal=null
+            pintarLosClientesEnElHTML()
+            formulario.reset()
+        } else {
+            alert("error; por favor reintente mas tarde")
+        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 })
@@ -57,7 +88,8 @@ espacioDondeSeMuestraLosClientes.addEventListener("click", async function (event
 
         formulario.btnsave.style.backgroundColor = "green";
         formulario.btnsave.textContent = "Actualizar usuario";
-    
+
+        cajaTemporal = cliente.id
     }
 
     if (evento.target.classList.contains("delete")) {
